@@ -1,0 +1,474 @@
+
+
+<div class="flex relative flex-col">
+    <div class="grid grid-cols-3 h-20 w-full bg-gray-300 p-2 align-center" [ngClass]="{'leftMove': exportMode== false && showFullData== true}">
+      <!-- <div class="flex justify-center mybox" (click)="activeSprint = !activeSprint">
+        <button class="bg-white rounded-3xl mx-2 py-2 px-2 flex justify-center font-bold text-gray-400 w-32 h-11">
+          Active Sprint
+        </button>
+        <div class="bg-white rounded-3xl mx-2 py-2 px-5 flex justify-center font-bold text-gray-400 w-32 h-11">
+          +2 More
+        </div>
+        <div class="flex justify-center align-center">
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </div> -->
+      <div class="flex flex-row justify-center align-center">
+        <div class="flex justify-center left-arrow">
+            <i class="fa fa-angle-left"></i>
+        </div>
+        <div class="headingBtn">
+            <div class="heading">Front-end Team</div>
+            <div class="down-arrow"></div>
+        </div>
+        <div class="flex justify-center right-arrow">
+            <i class="fa fa-angle-right"></i>
+        </div>
+    </div>
+      <div class="grid grid-cols-2" *ngIf="exportMode == false">
+        <div class="float-right">
+          <button class="bg-blue rounded-3xl lg:float-right mx-2 py-2 px-5 d-flex w-40" (click)="openDialog()">
+            <img src="assets/sendIcon.svg" class="sendIcon" alt="" />
+            <span class="text-white">Send a Kudo</span>
+          </button>
+        </div>
+        <div class="float-left">
+          <button class="bg-blue rounded-3xl lg:float-left text-white mx-2 py-2 px-5 d-flex max-w-48"
+            (click)="openSetGame()">
+            <img src="assets/playIcon.svg" alt="" class="playIcon" />
+            <span class="text-white"> Play Kudoboard </span>
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-row justify-start" *ngIf="exportMode == true">
+        <div>
+          <button class="bg-blue rounded-3xl py-2 px-7 mx-2 d-flex justify-center">
+            <span class="text-white">Export PDF</span>
+          </button>
+        </div>
+        <div>
+          <button class="bg-blue rounded-3xl text-white py-2 px-7 mx-2 d-flex justify-center">
+            <span class="text-white"> Export DOC </span>
+          </button>
+        </div>
+        <div>
+          <button class="bg-blue rounded-3xl text-white py-2 px-7 mx-2 d-flex justify-center" routerLink="export-card-data">
+            <span class="text-white"> Export JPG </span>
+          </button>
+        </div>
+      </div>
+      <div class="flex justify-end align-center">
+        <div class="w-70">
+          <div *ngIf="selectedUser=='' || selectedUser!='Toni Kroos'">
+            <div class="flex relative justify-end mr-2 -mt-5">
+              <div class="absolute">
+                <div *ngIf="openDropdown==false" class="w-44">
+                  <input type="search" id="search-dropdown" data-dropdown-toggle="dropdown"
+                    (click)="searchDropdown()" class="block p-2.5 z-20 text-sm rounded-3xl border-white"
+                    placeholder="">
+                  <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-gray-300">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span class="sr-only">Search</span>
+                  </button>
+                </div>
+                <div id="dropdown" class="z-10 bg-white rounded-2xl w-56 dropdownPos relative" *ngIf="openDropdown==true">
+                  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200 px-2" aria-labelledby="dropdown-button">
+                    <li class="borderGray">
+                      <input type="search" [(ngModel)]="userName" id="search-dropdown"
+                        class="block p-2.5 w-full z-20 text-sm border-none borderGray" placeholder="">
+                      <button type="submit" (click)="openDropdown=!openDropdown"
+                        class="absolute top-2 right-0 p-2.5 text-sm font-medium text-gray-300">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span class="sr-only">Search</span>
+                      </button>
+                    </li>
+                    <li *ngFor="let user of users | filterPipe:userName" (click)="selectUser(user.name)" class="borderGray">
+                      <button type="button"
+                        class="inline-flex align-center w-full px-1 py-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        <img src="{{user.img}}" class="optionsImg">
+                        <span class="dropdownText">{{user.name}}</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex align-center justify-end">
+            <img src="../../assets/topLeft3.png" class="h-25 w-25" alt="" *ngIf="selectedUser=='Toni Kroos'">
+            <div class="selectedUser" *ngIf="selectedUser != '' && selectedUser == 'Toni Kroos'"
+              (click)="selectedUser='' && dropdownSearch=false">
+              <i class="fa fa-times closeIcon"></i>
+            </div>
+          </div>
+        </div>
+        <button class="bg-white rounded-3xl mx-2 py-2 px-5 flex justify-center font-bold text-blue-950 w-30"
+          (click)="given = !given" *ngIf="given == false">
+          Given
+        </button>
+        <button class="rounded-3xl mx-2 py-2 flex justify-center font-bold text-blue-950 xl:w-[40%] lg:w-[80%] givenBtn"
+          (click)="given = !given" *ngIf="given == true">
+          <span class="givenText"> Given </span>
+          <img src="assets/bottomRight4.png" class="givenImg" />
+        </button>
+        <button class="bg-white rounded-3xl mx-2 py-2 px-5 flex justify-center font-bold text-blue-950 w-30"
+          (click)="received = !received" *ngIf="received == false">
+          Received
+        </button>
+        <button class="rounded-3xl mx-2 py-2 flex justify-center font-bold text-blue-950 xl:w-[40%] lg:w-[80%] receivedBtn"
+          (click)="received = !received" *ngIf="received == true">
+          <span class="receivedText"> Received </span>
+          <img src="assets/bottomRight4.png" class="receivedImg" />
+        </button>
+        <div class="w-10 flex align-center justify-end" *ngIf="exportMode == false">
+          <img src="assets/threeDots.svg" alt="" class="threeDots" (click)="settingDropdown = !settingDropdown; showFullData=false" />
+        </div>
+        <div class="w-10 h-30 flex align-center justify-start ml-3" *ngIf="exportMode == true" (click)="exportMode = false">
+          <i class="fa fa-times closeIcon"></i>
+        </div>
+      </div>
+    </div>
+    <div class="grid xl1:grid-cols-4 lg:grid-cols-3 h-100 w-full bg-gray-100 px-5 py-3 z-0"
+      [ngClass]="{'leftMove': exportMode== false && showFullData== true}">
+      <div class="flex flex-col w-1/4 m-2 card box-shadow" *ngFor="let card of cards;let i = index"
+        [ngClass]="{'border': exportMode==true && cardClick[i] == true}">
+        <div class="has-bg-img card-{{i}}-bg" (click)="showCardFullData(i);">
+          <div class="flex relative">
+            <div class="w-1/5">
+              <img src="{{card.img}}" alt="" class="imageLeft imageLeft1 cardImg">
+              <div class="box-shadow card1Left">
+                <small class="font-extrabold m-0 p-0">{{card.name}}</small><br />
+                <small class="email1Color m-0 p-0">{{card.email}}</small>
+              </div>
+            </div>
+            <div class="w-2/3 card-head">{{card.cardHeading}}</div>
+            <div class="w-1/6 justify-end absolute top-0 -right-5 h-auto w-auto">
+              <img src="{{card.topRightImg}}" alt="" class="mt-[-20px] mr-[20px]" />
+            </div>
+          </div>
+          <div class="card-content">
+            {{card.content}}
+          </div>
+          <div class="flex has-bg-bottom card-1-bottom relative">
+            <div class="2xl:w-5/12 xl:w-6/12 inline-flex">
+              <div class="likeSection">
+                <img src="assets/heartIcon.svg" alt="" /> {{card.like}}
+                <i class="fa-regular fa-ellipsis-stroke-vertical"></i>
+              </div>
+              <div class="commentSection">
+                <img src="assets/commentIcon.svg" alt="" /> {{card.comment}}
+              </div>
+              <div class="imageSection">
+                <img src="assets/imageIcon.svg" alt="" />
+              </div>
+              <div class="ellipsisSection w-20" (click)="toggleSocialIcon(i,$event)">
+                <i class="fa fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="w-4 2xl:w-4/12 xl:w-3/12 justify-center">
+              <div class="flex p-2 mb-2 bg-white box-shadow" *ngIf="this.socialIcon[i]">
+                <img src="assets/linkdinIcon.svg" alt="" class="img" />
+                <img src="assets/xingIcon.svg" alt="" class="img" />
+                <img src="assets/facebookLogo.svg" alt="" class="img" />
+              </div>
+            </div>
+  
+            <div class="w-6/12">
+              <img src="{{card.bottomimg}}" class="float-right img imageBottom imgPosition" />
+              <div class="box-shadow card1Right z-index">
+                <small class="font-extrabold m-0 p-0">{{card.bottomName}}</small><br />
+                <small class="emailColor m-0 p-0">{{card.bottomEmail}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height:inherit; overflow-y: auto;"
+      *ngIf="showFullData == true && exportMode == false || selectedUser != 'Toni Kroos' && selectedUser != ''"
+      class="sidebar z-10 absolute inset-y-0 right-0">
+      <div class="bg-white p-3 rounded-full my-5 mx-5">
+        <div class="flex flex-row justify-around ">
+          <img src="assets/bottomRight1.png" alt="" class="w-1/4" />
+          <div class="card-head w-1/2 p-0">
+            <p class="rounded-full m-0 heading h-[50px]">Thanks</p>
+          </div>
+          <img src="assets/topLeft1.png" class="w-1/4" />
+        </div>
+        <div class="flex flex-row justify-center">on 21st December, 2020</div>
+      </div>
+  
+      <div class="bg-white p-2 rounded-xl mb-5 mx-5">
+        <p>
+          Thank you for always being my sides during all the interviews and
+          decision makings in the last sprint. Without you if wouldn't be that
+          easy for me to manage everything. Looking forward for more tasks
+          together :D
+        </p>
+      </div>
+      <div class="bg-white p-2 rounded-xl mb-5 h-72 mx-5">
+        <img src="" />
+      </div>
+      <div class="p-5 rounded-xl bg-pink">
+        <div class="bg-white p-2 rounded-xl h-36 mb-5"></div>
+        <div class="bg-white h-2 rounded-xl mb-5"></div>
+        <div class="flex flex-col bg-white rounded-xl p-5">
+          <div class="flex flex-row">
+            <div class="w-1/4">
+              <img src="assets/topLeft2.png" alt="" />
+            </div>
+            <div class="w-3/4">
+              Amazing Job Bhai on Spiritto UI/UX. I was wondering earlier how we
+              could digitalized that module but what you did was beyond my
+              expectation level :D
+            </div>
+          </div>
+          <div class="flex flex-row justify-end">
+            <small class="text-gray-400">on 21st December, 2020</small>
+          </div>
+        </div>
+      </div>
+      <div class="p-5 rounded-xl bg-pink">
+        <div class="bg-white p-2 rounded-xl h-36 mb-5"></div>
+        <div class="bg-white h-2 rounded-xl mb-5"></div>
+        <div class="flex flex-col bg-white rounded-xl p-5 mb-5">
+          <div class="flex flex-row">
+            <div class="w-1/4">
+              <img src="assets/topLeft2.png" alt="" />
+            </div>
+            <div class="w-3/4">
+              I liked your statement and willing to carry forward this learning
+              onwards- As you said “you need all the managers in the team, We lack
+              managers , workers are abundant in the market “. Amazing Job Bhai on
+              Spiritto UI/UX. I was wondering earlier how we could digitalized
+              that module but what you did was beyond my expectation level :D
+            </div>
+          </div>
+          <div class="flex flex-row justify-end">
+            <small class="text-gray-400">on 21st December, 2020</small>
+          </div>
+        </div>
+        <div class="flex flex-col bg-white rounded-xl p-5">
+          <div class="flex flex-row">
+            <div class="w-1/4">
+              <img src="assets/topLeft2.png" alt="" />
+            </div>
+            <div class="w-3/4">
+              A big thanks to you for being an acting scrum master and helping me
+              and my HR Sprint! It proves you have great leadership skils! Keep it
+              up!
+            </div>
+          </div>
+          <div class="flex flex-row justify-end">
+            <small class="text-gray-400">on 21st December, 2020</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="settingDropdown == true" class="settingDropdown z-index">
+    <div class="flex flex-col">
+      <div class="flex justify-start align-middle py-2" (click)="exportMode = true; settingDropdown = false">
+        <div>
+          <i class="fa fa-file check mr-2"></i>
+        </div>
+        <p>Export Mode</p>
+      </div>
+      <div class="flex justify-start align-middle py-2" (click)="popup = true; settingDropdown = false">
+        <div>
+          <i class="fa fa-cog check mr-2"></i>
+        </div>
+        <p>Settings</p>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="activeSprint == true" class="activeSprintDropdown z-index">
+    <div class="relative flex align-center">
+      <input class="w-80 searchbar pl-2" type="search" placeholder="Search" />
+      <i class="fa fa-search flex align-center float-right search-icon"></i>
+    </div>
+    <div class="flex flex-col w-80">
+      <div class="flex justify-between align-middle borderGray py-2">
+        <p>Active Sprint</p>
+        <div>
+          <small>Started 3 days ago</small>
+          <i class="fa fa-check-circle check"></i>
+        </div>
+      </div>
+      <div class="flex justify-between align-middle borderGray py-2">
+        <p>Sprint 33VZ</p>
+        <div>
+          <small>21st June - 28th Jun</small>
+          <i class="fa fa-check-circle check"></i>
+        </div>
+      </div>
+      <div class="flex justify-between align-middle borderGray py-2">
+        <p>Sprint 32VZ</p>
+        <div>
+          <small>12th June - 19th Jun</small>
+          <i class="fa fa-check-circle checkGray"></i>
+        </div>
+      </div>
+      <div class="flex justify-between align-middle borderGray py-2">
+        <p>Sprint 31VZ</p>
+        <div>
+          <small>3rd June - 10th Jun</small>
+          <i class="fa fa-check-circle check"></i>
+        </div>
+      </div>
+      <div class="flex justify-between align-middle borderGray py-2">
+        <p>Sprint 30VZ</p>
+        <div>
+          <small>12th June - 19th Jun</small>
+          <i class="fa fa-check-circle checkGray"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="overlay" *ngIf="popup">
+    <div class="popup">
+      <div class="flex justify-between align-center settingHeader w-full h-[80px]">
+        <div>
+          <img src="" alt="" />
+        </div>
+        <div class="text-white settingText">Settings</div>
+        <div class="flex align-center justify-start" (click)="popup = false">
+          <i class="fa fa-times closeIcon mr-5"></i>
+        </div>
+      </div>
+      <div class="content flex flex-row">
+        <div class="popupContent">
+          <div class="flex justify-center">
+            <p class="popupHead z-index">Color Palette</p>
+          </div>
+          <div class="flex justify-between h-400 overflow-auto">
+            <div class="colorPalette">
+              <div class="flex">
+                <input type="radio" class="radio" />
+                <div>
+                  <b>Default</b>
+                  <div class="flex">
+                    <div *ngFor="let color of colors; let i = index">
+                      <div class="h-7 w-4 bg-[#FC6C81] border-grey" [style.backgroundColor]="color"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex mt-4">
+                <input type="radio" class="radio" />
+                <div>
+                  <b>Return of the Jedi</b>
+                  <div class="flex">
+                    <div *ngFor="let color of colors; let i = index">
+                      <div class="h-7 w-4 bg-[#FC6C81] border-grey" [style.backgroundColor]="color"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex mt-4">
+                <input type="radio" class="radio" />
+                <div>
+                  <b>Forest</b>
+                  <div class="flex">
+                    <div *ngFor="let color of colors; let i = index">
+                      <div class="h-7 w-4 bg-[#FC6C81] border-grey" [style.backgroundColor]="color"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex mt-4">
+                <input type="radio" class="radio" />
+                <div>
+                  <b>Techno</b>
+                  <div class="flex">
+                    <div *ngFor="let color of colors; let i = index">
+                      <div class="h-7 w-4 bg-[#FC6C81] border-grey" [style.backgroundColor]="color"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex mt-4">
+                <input type="radio" class="radio" />
+                <div>
+                  <b>Custom</b>
+                  <div class="flex mt-4">
+                    <div *ngFor="let color of colorsWhite; let i = index">
+                      <div class="h-7 w-4 bg-[white] border-grey" [style.backgroundColor]="color"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-50">
+              <div class="card relative">
+                <img src="../../assets/kudo-cards/kcard-gold.png" class="rounded-lg">
+              </div>
+              <div class="card relative">
+                <img src="../../assets/kudo-cards/kcard-orange.png" class="rounded-lg">
+              </div>
+              <div class="card relative">
+                <img src="../../assets/kudo-cards/kcard-pink.png" class="rounded-lg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popupContent relative">
+          <div class="flex justify-center">
+            <p class="popupHead">Prizes</p>
+          </div>
+          <div class="h-400 overflow-auto">
+            <div *ngIf="checkPrize == true">
+              <div class="prizeIcon">
+                <i class="fa fa-times-circle prizeCloseIcon"></i>
+                <img src="assets/pen.jpg" class="prizeLeftIcon" />
+                <h1 class="prizeName">Pen</h1>
+              </div>
+              <div class="prizeIcon">
+                <i class="fa fa-times-circle prizeCloseIcon"></i>
+                <img src="assets/car.jpg" class="prizeLeftIcon" />
+                <h1 class="prizeName">Car</h1>
+              </div>
+              <div class="prizeIcon">
+                <i class="fa fa-times-circle prizeCloseIcon"></i>
+                <h1 class="prizeName">
+                  Toilet Paper Rolls
+                </h1>
+              </div>
+            </div>
+            <div class="prizeDiv addPrize" *ngIf="addPrize == true">
+              <div>
+                <b>Prize Name</b><br />
+                <b class="text-gray-400">Box of chocolate</b>
+              </div>
+              <div>
+                <b>Images (Optional)</b><br />
+                <input type="file" />
+              </div>
+            </div>
+          </div>
+          <div class="plusIcon" (click)="addPrize = !addPrize">
+            <i class="fa fa-plus"></i>
+          </div>
+          <div class="plusIcon" (click)="addPrize = false; checkPrize = true" *ngIf="addPrize == true">
+            <i class="fa fa-check"></i>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <button class="bg-blue rounded-3xl mx-2 py-2 px-20 d-flex">
+          <span class="text-white">Save</span>
+        </button>
+      </div>
+    </div>
+  </div>

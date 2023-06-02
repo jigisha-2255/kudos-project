@@ -1,0 +1,35 @@
+<div class="flex relative">
+    <div class="grid xl1:grid-cols-4 lg:grid-cols-3 h-100 w-full bg-gray-100 p-7 z-0">
+        <div class="flex flex-col w-1/4 m-2 card box-shadow" *ngFor="let card of cards;let i = index"
+            [ngClass]="{'border': exportMode==true && cardClick[i] == true}">
+            <div class="" (click)="showCardFullData(i);">
+                <div class="flex relative cards-{{i}}-bg">
+                    <div class="w-1/6">
+                        <img src="{{card.img}}" alt="" class="imageLeft imageLeft1 absolute top-7">
+                    </div>
+                    <div *ngIf="showName[i]" class="box-shadow card1Left">
+                        <small class="font-extrabold m-0 p-0">{{card.name}}</small><br />
+                        <small class="email1Color m-0 p-0">{{card.email}}</small>
+                    </div>
+                    <div class="w-2/3 card-head">{{card.cardHeading}}</div>
+                    <div class="w-1/6 justify-end absolute top-0 -right-5 h-auto w-auto">
+                        <img src="assets/topRight1.svg" alt="" class="rotate-[270deg]" />
+                    </div>
+                </div>
+                <div class="card-content">
+                    {{card.content}}
+                </div>
+            </div>
+            <div class="flex has-bg-bottom card-1-bottom relative">
+                <img src="{{card.bottompattern}}" class="absolute rotate-[270deg] bottomPatternImg zIndex" />
+                <div *ngIf="showBottomName[i]" class="box-shadow card1Right z-index">
+                    <small class="font-extrabold m-0 p-0">{{card.bottomName}}</small><br />
+                    <small class="emailColor m-0 p-0">{{card.bottomEmail}}</small>
+                </div>
+                <div class="flex justify-end w-100">
+                    <img src="{{card.bottomimg}}" class="float-right img imageBottom" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

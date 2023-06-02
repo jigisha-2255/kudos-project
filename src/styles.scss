@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@font-face {
+    font-family: "Oxygen";
+    src: local("Oxygen"), url(./assets/fonts/Oxygen/Oxygen-Regular.ttf) format("truetype");
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: transparent !important;
+}
+
+.mat-dialog-container {
+    background-color: transparent !important;
+    padding:0px!important;
+}
+
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: rgb(255, 101, 132) !important;
+    border-bottom: none;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-form-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-mdc-select-value {
+    font: normal normal normal 25px/56px Cute Font;
+    color: #fff;
+    font-family: "Cute Font", cursive;
+    text-align: center;
+    z-index: 1;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+}
+
+.cdk-overlay-pane {
+    width: auto;
+    max-width: 95vw;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+[type='checkbox']:checked,
+[type='radio']:checked,
+.dark [type='checkbox']:checked,
+.dark [type='radio']:checked {
+    border-color: transparent;
+    background-color: #3f72b0;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+[type='checkbox']{
+    height:1.3rem;
+    width:1.3rem;
+}

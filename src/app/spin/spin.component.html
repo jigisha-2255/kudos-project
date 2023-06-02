@@ -1,0 +1,69 @@
+<div class="flex justify-between p-20">
+    <div class="winners">
+        <div class="winnersHead">
+            Winners
+        </div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+        <div class="winnersData"></div>
+    </div>
+    <div class="spinData">
+        <div class="flex flex-col justify-center align-center border-bottom p-20">
+            <h1 class="spinHead">Good Luck,
+                <span>Karla</span>
+            </h1>
+            <div class="flex flex-col justify-center align-center">
+                <ngx-wheel Roulette [width]="400" [height]="400" [spinDuration]="8" [items]="items" [innerRadius]="20"
+                    [spinAmount]="10" [textOrientation]="textOrientation" [textAlignment]="textAlignment"
+                    pointerStrokeColor="black" pointerFillColor="gold" [idToLandOn]="idToLandOn" (onSpinStart)="before()"
+                    (onSpinComplete)="after()"></ngx-wheel>
+                <div class="reset">
+                    <button (click)="reset()">Reset</button>
+                </div>
+                <div class="buttons">
+                    <button (click)="spin(0)">Prize 0</button>
+                    <button (click)="spin(1)">Prize 1</button>
+                    <button (click)="spin(2)">Prize 2</button>
+                    <button (click)="spin(3)">Prize 3</button>
+                    <button (click)="spin(4)">Prize 4</button>
+                    <button (click)="spin(5)">Prize 5</button>
+                    <button (click)="spin(6)">Prize 6</button>
+                    <button (click)="spin(7)">Prize 7</button>
+                    <button (click)="spin(8)">Prize 8</button>
+                    <button (click)="spin(9)">Prize 9</button>
+                    <button (click)="spin(10)">Prize 10</button>
+                    <button (click)="spin(11)">Prize 11</button>
+                </div>
+                <div class="flex align-center justify-center">
+                    <button class="spin" *ngIf="showSpinBtn" (click)="spin(0)">Spin</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center align-center p-20">
+            <img src="{{selectedPlayer}}" class="selectedPlayer">
+            <small class="text-gray-400 ">
+                <a>Choose Spinner</a>
+            </small>
+        </div>
+    </div>
+    
+
+    <div class="players">
+        <div class="playersHead">
+            Players
+        </div>
+        <div class="playersData" *ngFor="let player of players">
+            <div class="flex flex-row position-relative">
+                <img src="{{player.img}}" alt="">
+                <h1>{{player.name}}</h1>
+                <small><a (click)="choosePlayerSpinner(player)">Choose Spinner</a></small>
+            </div>
+        </div>
+    </div>
+</div>

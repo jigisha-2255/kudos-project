@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000" viewBox="0 0 1000 1000" xml:space="preserve">
+<desc>Created with Fabric.js 3.5.0</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<g transform="matrix(0 -2.6042 2.6042 0 464.5611 11.6768)" id="39713">
+<g style="" vector-effect="non-scaling-stroke">
+		<g transform="matrix(-0.9744 0.225 -0.225 -0.9744 -48.487 26.6105)" id="Path_495" clip-path="url(#CLIPPATH_3)">
+<clipPath id="CLIPPATH_3">
+	<rect transform="matrix(-0.9744 -0.225 0.225 -0.9744 -53.2304 15.0212)" id="Rectangle_67" x="-28.8" y="-205.8215" rx="6" ry="6" width="57.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(240,138,93); fill-rule: nonzero; opacity: 0.233;" transform=" translate(-32.1469, -215.1298)" d="M 14.45 0 S 25.7 42.846 20.823 105.107 S -7.122 206.01 2.193 263.26 S 28.364 351.283 18.606 393.5 S 64.294 430 64.294 430 V 6.349 Z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(-0.9744 0.225 -0.225 -0.9744 -109.9106 41.632)" id="Path_496" clip-path="url(#CLIPPATH_4)">
+<clipPath id="CLIPPATH_4">
+	<rect transform="matrix(-0.9744 -0.225 0.225 -0.9744 -116.4588 15.8405)" id="Rectangle_67" x="-28.8" y="-205.8215" rx="6" ry="6" width="57.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(240,138,93); fill-rule: nonzero; opacity: 0.673;" transform=" translate(-79.0323, -233.0585)" d="M 158.064 466.117 C 151.409 465.149 45.847 462.4 34.35 456 C 4.343 439.29 4 369.82 9.116 340.329 s 4.937 -50.041 -5.99 -115.814 s 10.183 -118.546 11.748 -166.9 S 2.232 6.168 2.232 6.168 L 158.064 0 Z" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

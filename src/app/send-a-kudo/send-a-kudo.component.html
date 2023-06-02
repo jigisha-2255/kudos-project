@@ -1,0 +1,172 @@
+<div class="flex justify-between align-center sendKudoHeader w-full h-[80px]">
+    <div>
+        <img src="" alt="" />
+    </div>
+    <div class="text-white kudoText">Send a Kudo</div>
+    <div class="flex align-center justify-start mr-5">
+        <i class="fa fa-times closeIcon" (click)="this.dialogRef.close();"></i>
+    </div>
+</div>
+
+<div class="flex flex-row justify-between gap-x-0 bg-white">
+    <div class="searchMembers mt-8 ml-8 w-25 p-5 flex flex-col">
+        <div class="flex flex-row justify-center align-center">
+            <div class="flex justify-center left-arrow">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="headingBtn">
+                <div class="heading">Front-end Team</div>
+                <div class="down-arrow"></div>
+            </div>
+            <div class="flex justify-center right-arrow">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+        <div>
+            <div class="relative my-3 flex align-center">
+                <input type="search" placeholder="Search member" [(ngModel)]="searchMember" class="searchbar border-bottom w-100">
+                <i class="fa fa-search flex align-center float-right search-icon"></i>
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();">
+                <span class="ml-5">Select All</span>
+            </div> 
+            <div class="flex items-center" *ngFor="let member of players | filterPipe:searchMember">
+                <input type="checkbox" [(ngModel)]="member.checked" (change)="checkIfAllSelected();">
+                <img src="../../assets/topLeft2.png" alt="" />
+                <span>{{member.name}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-2wxl:grid-cols-2 p-2 w-50">
+        <div class="flex flex-row">
+            <div class="flex flex-col justify-center align-center w-50 relative">
+                <div class="flex flex-row w-100 px-10 align-center">
+                    <div class="w-95">
+                        <div (click)="showDropdown=!showDropdown" [style.backgroundColor]="bg" class="bg-red-50 h-16 w-100 flex justify-between align-center px-1">
+                            <div class="card-head">{{category}}</div>
+                            <img width="50" height="50" [src]="img" class="rotate-[270deg]">          
+                        </div>
+                        <div class="dropdownShow">
+                            <div *ngFor="let category of options" [style.backgroundColor]="category.background" class="w-63 z-index">
+                                <div class="flex justify-between align-center px-1"  *ngIf="showDropdown" (click)="showDiv(category.value,category.background,category.image)">
+                                    <div class="card-head">{{category.value}}</div>
+                                    <img width="50" height="50" [src]="category.image" class="rotate-[270deg]">          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-20 flex justify-center">
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="greetings p-5">
+                    <div class="p-3 kudoBorder">
+                        Great work on the front-e Great work on the front-e Great work on the front-e Great work on the
+                        front-e Great work on the front-e Great work on the front-e Great work on the front-e Great work on
+                        the front-e Great work on the front-e Great work on the front-e Great work on the front-e Great work
+                        on the front-e Great work on the front-e Great work on the front-e Great work on the front-e Great
+                        work on the front-e Great work on the front-e Great work on the front-e Great work on the front-e
+                        Great work on the front-e Great work on the front-e Great work on the front-e Great work on the
+                        front-e Great work on the front-e
+                    </div>
+                </div>
+                <div class="flex flex-row justify-start tab-margin px-5 w-100">
+                    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                        <li class="mr-2">
+                            <a href="#" aria-current="page" class="inline-block p-4 text-blue-600 bg-white active dark:bg-gray-800 dark:text-blue-500">
+                                <i class="fa fa-font box-shadow"></i>
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
+                                <i class="fa fa-smile-o"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w-50">
+                <div class="flex align-center justify-center">
+                    <h1 class="color-blue addMoreHeading h-16 border-blue">Add More</h1>
+                </div>
+                <div class="addImg p-5">
+                    <div class="flex justify-around align-center">
+                        <div class="relative my-3 flex align-center">
+                            <input type="search" placeholder="Search member" class="border-bottom searchbar">
+                            <i class="fa fa-search flex align-middle float-right search-icon"></i>
+                        </div>
+                        <button class="clear">Clear</button>
+                    </div>
+                    <div class="p-1 kudoBorder mt-5 overflow-y-auto addImgs">
+                        <div class="flex justify-between w-100" *ngFor="let index of [0, 1, 2, 3]">
+                            <img src="../../assets/img1.jpeg" alt="" class="w-48 m-1" [ngClass]="{'border': showImg ==true}" (click)="showImg=!showImg">
+                            <img src="../../assets/img1.jpeg" alt="" class="w-48 m-1" [ngClass]="{'border': showImg ==true}" (click)="showImg=!showImg">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-end tab-margin">
+                    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                        <li class="mr-2">
+                            <a href="#" aria-current="page" class="inline-block p-4 text-blue-600 bg-white active dark:bg-gray-800 dark:text-blue-500">
+                                <i class="fa fa-font box-shadow"></i>
+                            </a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="#" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
+                                <i class="fa fa-smile-o box-shadow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     
+        <div class="flex justify-center">
+            <button
+          type="button"
+          class="rounded-full bg-[#3f72b0] w-44 h-11 text-white"
+        >Send a Kudo
+        </button>
+        </div>
+    </div>
+    
+    <div class="players mt-8 w-25 preview mr-8 p-5">
+        <div class="flex flex-row justify-center align-center">
+            <div class="flex justify-center left-arrow">
+            </div>
+            <div class="headingBtn">
+                <div class="heading">Preview</div>
+                <div class="down-arrow"></div>
+            </div>
+            <div class="flex justify-center right-arrow">
+            </div>
+        </div>
+        <div class="previewCard">
+            <div class="main_card max-w-sm w-100 bg-[grey] mx-auto mt-4 has-bg-img card-1-bg">
+                <div class="flex relative">
+                    <div class="w-1/6">
+                    <img src="../../assets/topLeft2.png" alt="" class="imageLeft imageLeft1">
+                    </div>
+                    <div class="w-2/3 card-head">Congratulations</div>
+                    <div class="w-1/6 justify-end absolute top-0 -right-5 h-auto w-auto">
+                    <img src="../../assets/kudo-card-icons/kicon-giri-with-baloons.png" alt="" class="mt-[-15px] mr-[20px]"/>
+                    </div>
+                </div>
+                <div class="card-content">
+                    I liked your statement and willing to carry forward this learning
+                    onwards- As you said “you need all the managers in the team, We lack
+                    managers , workers are abundant in the market“.
+                </div>
+                <div class="flex justify-end has-bg-bottom card-1-bottom relative">
+                    <div>
+                    <img src="../../assets/bottomRight2.png" class="float-right img imageBottom" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="winners p-5 mt-4">
+            <img src="../../assets/img1.jpeg" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>

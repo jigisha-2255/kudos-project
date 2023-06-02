@@ -1,0 +1,294 @@
+.p-20 {
+    padding: 20px;
+}
+
+.winners {
+    border-radius: 20px;
+    background-color: #fff;
+    width: 20%;
+    box-shadow: 6px 6px 56px #00000029;
+}
+
+.winnersHead {
+    background-color: rgba(63, 114, 176, 0.28);
+    color: rgba(56, 56, 56, 1);
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 0;
+    font-weight: bold;
+}
+
+.winnersData {
+    border-bottom: 1px solid lightgray;
+    padding: 30px;
+    margin: 10px;
+}
+
+.players {
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 20%;
+    box-shadow: 6px 6px 56px #00000029;
+}
+
+.playersHead {
+    background-color: rgba(63, 114, 176, 0.28);
+    color: rgba(56, 56, 56, 1);
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 0;
+    font-weight: bold;
+}
+
+.playersData {
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+    margin: 10px;
+}
+
+.playersData h1 {
+    display: flex;
+    align-items: center;
+    font: normal normal 600 20px/41px Baloo Bhaina 2;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #383838;
+    opacity: 1;
+}
+
+// .playersData img{
+// height:65px;
+// width:65px;
+// }
+.playersData small {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.playersData small a {
+    color: rgba(114, 114, 114, 1);
+    border-bottom: 1px solid lightgray;
+    float: right;
+}
+
+.spinData {
+    width:60%;
+    margin:0 50px;
+    
+}
+
+.spinData span {
+    color: #3f72b0;
+}
+
+.spinData .spinHead {
+    margin: 50px 0;
+    font: normal normal normal 40px/10px "Cute Font", Cursive;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.donut {
+    position: absolute;
+    top: 200px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: conic-gradient(rgba(195, 238, 235, 1) 0deg 120deg,
+            rgba(0, 184, 169, 1) 120deg 240deg,
+            rgba(195, 238, 235, 1) 240deg 360deg);
+}
+
+.donut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.innerUpperDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #fff;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    font: normal normal normal 20px/50px Cute Font;
+    font-family: "Cute Font", cursive;
+}
+
+.upperDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    width: 105px;
+    border-radius: 50%;
+    background: rgba(0, 184, 169, 1);
+}
+
+.innerDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 184, 169, 1);
+    color: #fff;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font: normal normal normal 20px/50px Cute Font;
+    font-family: "Cute Font", cursive;
+}
+
+.spinnerDonut {
+    position: absolute;
+    top: 200px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: conic-gradient(#D0CDE1 0deg 120deg,
+            #D0CDE1 120deg 240deg,
+            #D0CDE1 240deg 360deg);
+}
+
+.spinnerDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinnerInnerUpperDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #fff;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    font: normal normal normal 20px/50px Cute Font;
+    font-family: "Cute Font", cursive;
+}
+
+.spinnerUpperDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    width: 105px;
+    border-radius: 50%;
+    background: #D0CDE1;
+}
+
+.spinnerInnerDonut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D0CDE1;
+    color: #fff;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font: normal normal normal 20px/50px Cute Font;
+    font-family: "Cute Font", cursive;
+}
+
+.pic {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+}
+
+.arrow-up {
+    position: relative;
+    top: 3.5px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid rgba(0, 184, 169, 1);
+}
+
+.arrow-down {
+    position: relative;
+    bottom: 3.5px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid rgba(0, 184, 169, 1);
+}
+
+.spinner-arrow-up {
+    position: relative;
+    top: 3.5px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #D0CDE1;
+}
+
+.spinner-arrow-down {
+    position: relative;
+    bottom: 3.5px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #D0CDE1;
+}
+
+.slick-slider {
+    width: 88%;
+    margin: auto;
+    background: rgb(14, 13, 13);
+}
+
+body .slick-prev,
+body .slick-next {
+    height: 45px;
+    width: 40px;
+    background: grey !important;
+    z-index: 100;
+}
+
+.align-center {
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.spin {
+    background: #3F72B0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: auto;
+    height: 25px;
+    padding: 20px;
+}
+
+.border-bottom{
+    border-bottom:3px solid #eee;
+}
+.selectedPlayer{
+    height:100px; 
+    width:100px;
+}

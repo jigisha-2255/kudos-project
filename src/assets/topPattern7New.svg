@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000" viewBox="0 0 1000 1000" xml:space="preserve">
+<desc>Created with Fabric.js 3.5.0</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<g transform="matrix(0 -2.5815 2.5815 0 465.4083 95.2763)" id="978044">
+<g style="" vector-effect="non-scaling-stroke">
+		<g transform="matrix(0.9744 0.225 -0.225 0.9744 18.1764 -19.6126)" id="Path_213" clip-path="url(#CLIPPATH_1)">
+<clipPath id="CLIPPATH_1">
+	<rect transform="matrix(0.9744 -0.225 0.225 0.9744 -13.2986 23.1987)" id="Rectangle_59" x="-36.8" y="-205.8215" rx="6" ry="6" width="73.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(250,212,197); fill-rule: nonzero; opacity: 0.7;" transform=" translate(-30.1815, -167.2403)" d="M 13.567 334.483 s 10.565 -33.309 5.984 -81.709 S -6.686 174.332 2.059 129.827 S 26.63 61.4 17.469 28.575 S 60.363 0.2 60.363 0.2 V 329.548 Z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(0.9744 0.225 -0.225 0.9744 64.33 48.1399)" id="Path_216" clip-path="url(#CLIPPATH_2)">
+<clipPath id="CLIPPATH_2">
+	<rect transform="matrix(0.9744 -0.225 0.225 0.9744 -73.5104 -32.435)" id="Rectangle_59" x="-36.8" y="-205.8215" rx="6" ry="6" width="73.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(242,157,124); fill-rule: nonzero; opacity: 1;" transform=" translate(-78.0882, -278.525)" d="M 156.169 0 L 21.749 0.8 S -3.829 66.155 7.736 172.824 S -1.577 310.192 0.1 358.118 s -0.3 71.482 4.246 112.939 s -1.206 71.926 -1.206 71.926 l 153.033 14.067 Z" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,114 @@
+<div class="w-[800px] h-[510px] main_div rounded-3xl mx-auto mt-8">
+    <div class="header w-full h-[80px] flex justify-between items-center">
+      <div class="flex justify-center w-95">
+        <h1 class="text-white text-4xl">Set the game</h1>
+      </div>
+      <div class="flex align-center justify-start w-5 mr-5">
+        <i class="fa fa-times closeIcon" (click)="this.dialogRef.close();"></i>
+      </div>
+    </div>
+  
+    <div
+      class="sub_div w-[630px] h-[300px] mx-auto mt-8 grid grid-cols-2 divide-x"
+    >
+      <div class="mx-auto w-[30%]">
+        <button type="button" class="bg-[#3f72b0] w-40 h-8 text-white mt-[-20px]">
+          Team & Sprint
+        </button>
+        <div class="mt-[40%]">
+          <select
+            name=""
+            id=""
+            value=""
+            class="w-[180px] h-11 main_div_dropdown rounded-full font-bold pl-2"
+          >
+            <option value="Back-end Team">Back-end Team</option>
+            <option value="Front-end Team" selected>Front-end Team</option>
+          </select>
+          <select
+            name=""
+            id=""
+            value=""
+            class="w-[180px] h-11 main_div_dropdown rounded-full font-bold mt-4 pl-2"
+          >
+            <option value="Sprint32VZ">Sprint32VZ</option>
+            <option value="Sprint32VZ" selected>Sprint32VZ</option>
+          </select>
+        </div>
+      </div>
+      <div class="pl-4 relative">
+        <button
+          type="button"
+          class="bg-[#3f72b0] w-40 h-8 text-white ml-20 mt-[-20px]"
+        >
+          Prizes
+        </button>
+        <div class="divide-y mr-5">
+          <div class="flex item items-center mt-4">
+            <i
+              class="fa fa-times-circle"
+              style="font-size: 20px; margin-right: 10px"
+            ></i>
+  
+            <img
+              src="../../assets/pen.jpg"
+              class="h-[55px] w-[55px] rounded-full"
+              alt=""
+            />
+            <h1 class="text-lg font-bold ml-4">Pen</h1>
+          </div>
+          <div class="flex item items-center mt-4">
+            <i
+              class="fa fa-times-circle"
+              style="font-size: 20px; margin-right: 10px"
+            ></i>
+            <img
+              src="../../assets/car.jpg"
+              class="h-[60px] w-[60px] rounded-full"
+              alt=""
+            />
+            <h1 class="text-lg font-bold ml-4">Car</h1>
+          </div>
+          <div class="flex items-center mt-4 pt-[20px]">
+            <i
+              class="fa fa-times-circle"
+              style="font-size: 20px; margin-right: 10px"
+            ></i>
+            <h1 class="text-lg font-bold ml-4">Toilet Paper rolls</h1>
+          </div>
+          <div class="mt-2"></div>
+        </div>
+        <div class="prizeDiv absolute bottom-12 bg-white addPrize" *ngIf="addPrize == true">
+          <div>
+            <b>Prize Name</b><br />
+            <b class="text-gray-400">Box of chocolate</b>
+          </div>
+          <div>
+            <b>Images (Optional)</b><br />
+            <input type="file" />
+          </div>
+        </div>
+        <div
+          class="plusIcon h-[35px] w-[35px] rounded-full bg-[#3f72b0] flex items-center justify-center text-white ml-[250px] mt-2"
+        (click)="addPrize=!addPrize">
+          <i class="fa fa-plus"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div class="buttons flex justify-center items-center mt-8 gap-4">
+      <button
+        type="button"
+        class="rounded-full bg-[#3f72b0] w-44 h-11 text-white" routerLink="spin" (click)="this.dialogRef.close();"
+      >
+        Start
+      </button>
+      <button
+        type="button"
+        class="rounded-full bg-[#3f72b0] w-44 h-11 text-white" routerLink="spin" (click)="this.dialogRef.close();"
+      >
+        Start without prize
+      </button>
+    </div>
+  </div>
+  

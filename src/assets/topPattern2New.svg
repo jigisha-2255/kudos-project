@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000" viewBox="0 0 1000 1000" xml:space="preserve">
+<desc>Created with Fabric.js 3.5.0</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<g transform="matrix(0 -2.7141 2.579 0 469.2022 99.1732)" id="135352">
+<g style="" vector-effect="non-scaling-stroke">
+		<g transform="matrix(0.9744 0.225 -0.225 0.9744 18.1759 -19.6121)" id="Path_213" clip-path="url(#CLIPPATH_1)">
+<clipPath id="CLIPPATH_1">
+	<rect transform="matrix(0.9744 -0.225 0.225 0.9744 -13.2983 23.1981)" id="Rectangle_59" x="-36.8" y="-205.8215" rx="6" ry="6" width="73.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(195,238,235); fill-rule: nonzero; opacity: 0.7;" transform=" translate(-30.1815, -167.2404)" d="M 13.567 334.483 s 10.565 -33.309 5.984 -81.709 S -6.686 174.332 2.059 129.827 S 26.63 61.4 17.469 28.576 S 60.363 0.2 60.363 0.2 V 329.548 Z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(0.9744 0.225 -0.225 0.9744 73.7448 11.5562)" id="Path_215" clip-path="url(#CLIPPATH_2)">
+<clipPath id="CLIPPATH_2">
+	<rect transform="matrix(0.9744 -0.225 0.225 0.9744 -74.4544 5.329)" id="Rectangle_59" x="-36.8" y="-205.8215" rx="6" ry="6" width="73.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,184,169); fill-rule: nonzero; opacity: 0.695;" transform=" translate(-79.1356, -202.2165)" d="M 158.273 0 C 151.609 0.84 45.907 3.225 34.4 8.78 C 4.348 23.277 4.005 83.553 9.128 109.142 s 4.943 43.419 -6 100.488 s 10.2 102.859 11.763 144.811 S 2.234 399.081 2.234 399.081 l 156.038 5.352 Z" stroke-linecap="round"/>
+</g>
+		<g transform="matrix(0.9744 0.225 -0.225 0.9744 64.3263 48.1396)" id="Path_216" clip-path="url(#CLIPPATH_3)">
+<clipPath id="CLIPPATH_3">
+	<rect transform="matrix(0.9744 -0.225 0.225 0.9744 -73.5068 -32.4355)" id="Rectangle_59" x="-36.8" y="-205.8215" rx="6" ry="6" width="73.6" height="411.643"/>
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,184,169); fill-rule: nonzero; opacity: 1;" transform=" translate(-80.5629, -278.525)" d="M 158.648 0 L 24.227 0.8 S -1.351 66.155 10.214 172.824 S 0.9 310.192 2.574 358.118 S 2.272 429.6 6.82 471.057 s -1.206 71.926 -1.206 71.926 l 153.033 14.067 Z" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

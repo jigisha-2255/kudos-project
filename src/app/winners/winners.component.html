@@ -1,0 +1,85 @@
+<div class="flex flex-row justify-between gap-x-16">
+    <div class="winners mt-8 ml-8 max-w-64 w-64">
+      <div class="winnersHead">Winners</div>
+      <div class="divide-y divide-solid">
+        <div class="flex items-center">
+          <img src="../../assets/topLeft2.png" alt="" />
+          <span>Toni Kroos</span>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  
+    <div class="flex flex-col w-[1200px] mx-auto mt-8">
+      <div>
+        <img src="../../assets/winnerScreen.png" style="width:100%;">
+      </div>
+      <div class="winnersData grid grid-cols-1 xl:grid-cols-2 max-w-6xl">
+        <div
+        *ngFor="let index of [0, 1, 2, 3]"
+        class="main_card max-w-sm w-96 h-56 bg-[grey] mx-auto mt-4 card-1-bg"
+      >
+        <div class="top flex flex-row relative">
+          <div class="w-1/5">
+            <img src="../../assets/topLeft2.png" alt="" class="h-20" />
+          </div>
+          <div class="w-2/3 card-head">
+            Congratulations
+          </div>
+          <div class="w-1/6">
+            <img
+            src="../../assets/kudo-card-icons/kicon-giri-with-baloons.png"
+            alt=""
+            class="girlImg absolute top-0 right-0 mr-[0px] mt-[-30px]"
+          />
+          </div>
+        </div>
+  
+        <div class="content ml-3.5">
+          <span>
+            I liked your statement and willing to carry forward this learning
+            onwards- As you said “you need all the managers in the team, We lack
+            managers , workers are abundant in the market“.
+          </span>
+        </div>
+        <div class="footer_part flex relative items-end">
+          <img src="../../assets/redHeartIcon.svg" alt="" class="heartIcon" />
+          <label for="" class="heart_content">3</label>
+          <img src="../../assets/commentIcon.svg" alt="" class="commentIcon" />
+          <label for="" class="comment_content">5</label>
+          <img src="../../assets/threeDots.svg" class="threedots" alt="" />
+          <img
+            src="../../assets/bottomRight2.png"
+            alt=""
+            class="botttomImg absolute bottom-0 right-0 transform mr-[7px]"
+          />
+        </div>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
+      <div class="flex justify-between mt-7">
+        <button
+        type="button"
+        class="rounded-full bg-[#3f72b0] w-44 h-11 text-white" routerLink=""
+      > Back to Board View
+      </button>
+      <button
+        type="button"
+        class="rounded-full bg-[#3f72b0] w-44 h-11 text-white" routerLink="../spin"
+      > Spin Again
+      </button>
+      </div>
+    </div>
+    <div class="players mt-8 max-w-64 w-64 winners mr-8">
+      <div class="winnersHead">Players</div>
+      <div class="divide-y divide-solid" *ngFor="let player of players">
+        <div class="flex items-center">
+          <img src="{{ player.img }}" alt="" />
+          <h1>{{ player.name }}</h1>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
