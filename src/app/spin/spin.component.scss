@@ -71,9 +71,9 @@
 }
 
 .spinData {
-    width:60%;
-    margin:0 50px;
-    
+    width: 60%;
+    margin: 0 50px;
+
 }
 
 .spinData span {
@@ -271,7 +271,11 @@ h3 {
     margin-top: 20px;
     width: 400px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
+}
+
+.buttons button {
+    margin: 20px;
 }
 
 .spin {
@@ -283,12 +287,20 @@ h3 {
     width: auto;
     height: 25px;
     padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
 }
 
-.border-bottom{
-    border-bottom:3px solid #eee;
+.border-bottom {
+    border-bottom: 3px solid #eee;
 }
-.selectedPlayer{
-    height:100px; 
-    width:100px;
+
+.selectedPlayer {
+    height: 100px;
+    width: 100px;
+}
+
+.prizeImg {
+    height: 70px;
+    width: 70px;
 }
